@@ -1,18 +1,18 @@
-﻿class Node
+﻿class Noeud
 {
-    Node suivant = null;
+    Noeud suivant = null;
     int value; 
 
-    public Node(int data)
+    public Noeud(int data)
     {
         this.value = data;
     }
 
-    void appendToTail(int data)
+    void AjouterALaQueue(int data)
     {
-        Node end = new Node(data);
+        Noeud end = new Noeud(data);
 
-        Node node = this;
+        Noeud node = this;
 
         while(node.suivant != null)
         {
