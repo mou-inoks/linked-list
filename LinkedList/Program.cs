@@ -1,4 +1,6 @@
-﻿class Noeud
+﻿//Exercice Linekd List page 92 Cracking the coding game 
+//Créer un noeud basique 
+class Noeud
 {
     Noeud suivant = null;
     int value; 
