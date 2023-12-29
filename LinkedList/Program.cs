@@ -1,11 +1,11 @@
 ﻿class Node
 {
-    Node next = null;
-    int data; 
+    Node suivant = null;
+    int value; 
 
     public Node(int data)
     {
-        this.data = data;
+        this.value = data;
     }
 
     void appendToTail(int data)
@@ -14,10 +14,10 @@
 
         Node node = this;
 
-        while(node.next != null)
+        while(node.suivant != null)
         {
-            node = node.next;
+            node = node.suivant;
         }
-        node.next = end;
+        node.suivant = end;
     }
 }
