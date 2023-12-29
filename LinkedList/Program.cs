@@ -12,14 +12,18 @@ class Noeud
 
     void AjouterALaQueue(int data)
     {
-        Noeud end = new Noeud(data);
+        Noeud fin = new Noeud(data);
 
-        Noeud node = this;
+        Noeud noeud = this;
 
-        while(node.suivant != null)
+        while(noeud.suivant != null)
         {
-            node = node.suivant;
+            noeud = noeud.suivant;
         }
-        node.suivant = end;
+        noeud.suivant = fin;
     }
 }
+
+//1 Remove Dups
+//Write code to remove duplicates from an unsorted linked list, FOLLOW UP.
+//How would you solve this problem if a temporary buffer is not allowed ?  
