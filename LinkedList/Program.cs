@@ -1,5 +1,15 @@
 ﻿//Exercice Linekd List page 92 Cracking the coding game 
+//1 Remove Dups
+//Write code to remove duplicates from an unsorted linked list, FOLLOW UP.
+//How would you solve this problem if a temporary buffer is not allowed ?  
+
+var noeud = new Noeud(1);
+
+
+
+
 //Créer un noeud basique 
+
 class Noeud
 {
     Noeud suivant = null;
@@ -9,7 +19,7 @@ class Noeud
     {
         this.value = data;
     }
-
+    //AJouter noeud à un autre noeud 
     void AddToQueue(int data)
     {
         Noeud fin = new Noeud(data);
@@ -25,31 +35,36 @@ class Noeud
 
     void RemoveDuplicate()
     {
-        Noeud ptr1 = null,
-             ptr2 = null, dup = null;
-        ptr1 = suivant;
+        Noeud noeud1 = null;
+
+        Noeud noeud2 = null;
+
+        Noeud duplicate = null;
+
+        noeud1 = suivant;
 
         // Prendre chque éléments 1 par 1 
-        while (ptr1 != null &&
-               ptr1.suivant != null)
+        while (noeud1 != null &&
+               noeud1.suivant != null)
         {
-            ptr2 = ptr1;
+            noeud2 = noeud1;
 
             /* Comparer l'élément avec le reste */
-            while (ptr2.suivant != null)
+            while (noeud2.suivant != null)
             {
                 // Si pareil enlever 
-                if (ptr1.value == ptr2.suivant.value)
+                if (noeud1.value == noeud2.suivant.value)
                 {
-                    dup = ptr2.suivant;
-                    ptr2.suivant = ptr2.suivant.suivant;
+                    duplicate = noeud2.suivant;
+                    noeud2.suivant = noeud2.suivant.suivant;
                 }
+                //Sinon passer au suivant
                 else
                 {
-                    ptr2 = ptr2.suivant;
+                    noeud2 = noeud2.suivant;
                 }
             }
-            ptr1 = ptr1.suivant;
+            noeud1 = noeud1.suivant;
         }
     }
 
@@ -62,8 +77,4 @@ class Noeud
         }
     }
 }
-
-//1 Remove Dups
-//Write code to remove duplicates from an unsorted linked list, FOLLOW UP.
-//How would you solve this problem if a temporary buffer is not allowed ?  
 
